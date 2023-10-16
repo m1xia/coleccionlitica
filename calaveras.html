@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Lítico</title>
+
+    <script src="https://kit.fontawesome.com/5ea709b082.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="magnific-popup.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="xzoom.css" media="all" />
+
+
+
+
+
+
+     <script type="text/javascript" src="magnific-popup.js"></script>
+    <script type="text/javascript" src="xzoom.min.js"></script>
+
+    
+   
+    <style>
+
+        .galer{
+            color: #876e69;
+        }
+
+        .main {
+           
+            font-family: 'Play', sans-serif;
+            margin: 0;
+            padding: 0;
+           
+            
+        }
+
+       
+       
+        .sub {
+    font-size: 2.2375rem;
+    text-align: center;
+    color: #e9ecef;
+    padding-top: 4rem;
+    padding-bottom: 0;
+  }
+
+
+  .indxx h1{
+    font-size: 4.2rem;
+    font-family: 'Archivo Black', sans-serif;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 0.5rem;    
+    text-align: center;
+    background-color: #aaa0a6cf;
+    
+    color: #313131;
+  }
+
+ /* .indxx h1:before{
+    content:"";
+    display: block;
+    width: 415px;
+    height: 10px;
+    background:#876e69;
+    position: absolute;
+    left:0;
+    top: 19%;
+  }
+
+  .indxx h1:after{
+    content:"";
+    display: block;
+    width: 415px;
+    height: 10px;
+    background:#876e69;
+    position: absolute;
+    right:0;
+    top: 19%;
+  }
+*/
+  
+
+ 
+
+  .indxx h2{
+    font-size: 1.3rem;
+    color: #876e69;
+    margin-left: 9rem;
+    margin-right: 9rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+
+        .galeria-container{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            transition: all .2s linear;
+            overflow-x: hidden;
+        }
+
+        .galeria-container .title {
+            font-size: 1.3rem;
+            text-align: center;
+            color: #c38776;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            
+        }
+
+        .galeria-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+            gap: 2.4rem;
+           
+        }
+        
+        .galeria-container .pieza {
+           text-align: center;
+            background: #d1b9b9cf;
+            box-shadow: 0 .2rem .5rem #1a1a1ab3; 
+            border-radius: 5%;
+            cursor: pointer;
+        }
+
+        .galeria-container .pieza:hover{
+            
+            outline-offset: 0;
+        }
+
+        .galeria-container .pieza img{
+            height: 15rem;
+            width: 15rem;
+            padding-top: 22px;
+            margin: 0;
+            
+            
+        }
+
+        .galeria-container .pieza:hover img{
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        
+
+        .galeria-container .pieza:hover h3{
+            color: #313131;
+            
+        }
+
+
+        .galeria-container .pieza h3{
+            font-size: 2rem;
+            color: #876e69;
+            text-align: center;
+            margin-bottom: 0.7rem;
+            margin-top: 1.5rem;
+            
+        }
+
+        .galeria-preview{
+            position: fixed;
+            top: 0; left: 10;
+            min-height: 100vh;
+            width: 100%;
+            background: #1f1e1ee6;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            
+
+            
+            
+        }
+
+        .galeria-preview .preview{
+            display: none;
+            font-family: 'Montserrat', sans-serif;
+            margin: 100px auto 0;
+            margin: 1rem;
+            margin-left: 1.5rem;
+            margin-top: 0;
+            text-align: left;
+            background: #f4efefcf;
+            position: relative;
+            
+            width: 71rem;
+            height: 39rem;
+            
+            overflow: hidden;
+            overflow-y: scroll;
+
+            scroll-behavior: smooth;
+    
+      
+      
+       
+            &::-webkit-scrollbar{
+          width: 0rem;
+      }
+  
+      &::-webkit-scrollbar-track{
+          background-color:transparent;
+      }
+  
+      &::-webkit-scrollbar-thumb{
+          background-color: transparent;
+      }
+            
+        }
+        
+        .galeria-preview .preview.active{
+            display: inline-block;
+        }
+        
+        .galeria-preview .preview .fa-times{
+            position: absolute;
+            top: 0.3rem; right: 1.5rem;
+            cursor: pointer;
+            color: #ffffff;
+            font-size: 2rem;
+            padding-top: 0rem;
+
+        }
+
+        .galeria-preview .preview header{
+            margin: 0;
+            padding: 0;
+            background-color: #7b6966;
+            
+  
+           
+        }
+
+        .galeria-preview .preview header h3{
+          font-size: 2.2rem;
+            color: #ffffff; 
+             text-align: center;
+             font-weight: bold;
+             font-size: 30px;
+        }
+
+        .galeria-preview .preview footer{
+            background-color: #7b6966;
+            
+  
+           
+        }
+
+        .galeria-preview .preview footer h6{
+             color: #ffffff; 
+             text-align: center;
+             margin: 0;
+             padding: 0;
+             padding-bottom: 1rem;
+             font-weight: bold;
+             font-size: 15px;
+        }
+
+        .galeria-preview .preview .pre #magnific{
+            padding: 3rem;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+            
+        .galeria-preview .preview .pre #magnific .xzoom-container{
+           
+            display: flex;
+            padding-top: 1rem;
+            
+        }
+
+        
+        .galeria-preview .preview .pre #magnific .xzoom-container .thumbb{
+            display: list-item;
+            list-style: none;
+            text-align: center;
+       }
+
+       .galeria-preview .preview .pre #magnific .xzoom-container .thumbb h6{
+       color: #000000;
+            background-color: transparent;
+            margin-left: 1.4rem;
+            text-align: center;
+}
+.galeria-preview .preview .pre #magnific .xzoom-container .thumbb h5{
+    margin: 0;
+    text-align: center;
+    color: #000000;
+            background-color: #e9ecef;
+}
+       
+        .galeria-preview .preview .pre #magnific .xzoom-container .prepre{
+            
+            display: list-item;
+            list-style: none;
+            padding-left: 2rem;
+            margin: 0;
+            width: 100%;
+            
+        }
+
+        .galeria-preview .preview .pre #magnific .xzoom-container .prepre .tabla{
+            background-color: transparent;
+            margin-top: 0;
+            padding: 0rem;
+            padding-left: 1.5rem;
+            padding-top: 1.5rem;
+        }
+
+        .galeria-preview .preview .pre #magnific .xzoom-container .prepre .cuadro{
+            width: 100%;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            
+        }
+
+        thead{
+            background-color: transparent;
+            color: #000000;
+            padding-bottom: 0.5rem;
+            
+        }
+
+        th{
+            padding: 0px;
+            text-align: left;
+            border-right: 1px solid #000000;
+            border-left: 1px solid #000000;
+            padding-left: 0.5rem;
+            padding-top: 0.5rem;
+            
+        }
+
+        tbody{
+            background-color: transparent;
+            
+        }
+
+        td {
+            padding: 0px;
+            font-size: 14px;
+            color: #000000;
+            text-align: center;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+            padding-bottom: 0.5rem;
+           
+        }
+        tr:nth-child(even){
+            background: #ffffff;
+        }
+        .galeria-preview .preview .pre #magnific .xzoom-container .prepre .tabla .tabla-title{
+           font-size: 16px;
+            text-align: center;
+           background-color: #cbbec6;
+           color: #000000;
+           margin: 0;
+           padding: 13px;
+        }
+      
+      
+
+       
+
+        .galeria-preview .preview .notas .sig{
+            display: flex;
+            padding-top: 4rem;
+            align-items:stretch;
+            justify-content: center;
+        }
+        .galeria-preview .preview .notas .sig button{
+            padding: 10px;
+            margin: 10px;
+            background-color: rgb(180, 161, 163);
+        }
+        
+               
+       
+
+        h1{
+    font-size: 3.2375rem;
+    padding-top: 0px;
+    text-align: center;
+  }
+
+  
+  .galeria-preview .preview .notas{
+    padding: 3rem;
+  }
+
+  .galeria-preview .preview .notas p{
+
+    font-size: 1.2375rem;
+    color: #000000;
+    text-align: left;
+    padding-left: 1.5rem;   
+    
+  }
+
+  @media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+
+  }
+
+  @media (max-width:768px){
+    .galeria-preview .preview img{
+            height: 25rem;
+            width: 20rem;
+        }
+        .galeria-preview .preview{
+            width: 40rem;
+            height: 40rem;
+        }
+
+        #xcontainer {
+            display: list-item;
+            
+        }
+
+  }
+
+  @media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .content{
+        width: auto;
+    }
+
+    .galeria-preview .preview img{
+            height: 10rem;
+            width: 10rem;
+        }
+
+        .galeria-preview .preview{
+            width: 31rem;
+            height: 40rem;
+        }
+  }
+
+  @media (min-width:768px){
+    .content {
+      width: auto;
+    }
+  }
+
+    </style>
+</head>
+<body>
+
+
+    <customhtml>
+        <div class="vertical"></div>
+            <script>
+               (function titleScroller(text) {
+                 document.title = text;
+                  console.log(text);
+                  setTimeout(function() {
+                    titleScroller(text.substr(1) + text.substr(0, 1));
+                  }, 500);
+                }("  COLECCION LITICA "));
+            </script>
+    </customhtml>
+
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                
+
+                <a href="index.html">MENU </a>
+                <hr style="color: #876e69;">
+            </div>
+    
+            <div class="menu-cont">
+    
+                                   
+             
+    
+                <li class="sidebar-item">
+                        <a href="presentación.html" class="sidebar-link">
+                            <i class="fa-solid fa-list"></i>
+                            Presentación
+                        </a>
+                </li>
+                
+                <hr style="color: #876e69;">
+               
+    
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
+                        aria-expanded="false" aria-controls="pages">
+                        <i class="fa-regular fa-file-lines pe-2"></i>
+                        Colecciones
+                    </a>
+                    <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+
+
+                        <hr style="color: #876e69;">
+                        <li class="sidebar-itemm">
+                            <a href="armas.html" class="sidebar-linkk"> -Armas-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+
+                        <li class="sidebar-itemm">
+                            <a href="calaveras.html" class="sidebar-linkk"> -Calaveras-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+                        <li class="sidebar-itemm">
+                            <a href="conopas.html" class="sidebar-linkk"> -Conopas-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+
+
+                        <li class="sidebar-itemm">
+                            <a href="estelas.html" class="sidebar-linkk"> -Estelas-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+                        <li class="sidebar-itemm">
+                            <a href="illas.html" class="sidebar-linkk"> -Illas-mullus-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+                        <li class="sidebar-itemm">
+                            <a href="maquetas.html" class="sidebar-linkk"> -Maquetas-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+
+                        <li class="sidebar-itemm">
+                            <a href="mascaras.html" class="sidebar-linkk"> -Máscaras-
+                            </a>
+                        </li>
+
+
+                        <hr style="color: #876e69;">
+
+                        <li class="sidebar-itemm">
+                            <a href="mazos.html" class="sidebar-linkk"> -Mazos-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+
+                        <li class="sidebar-itemm">
+                            <a href="morteros.html" class="sidebar-linkk"> -Morteros-
+                            </a>
+                        </li>
+
+                        <hr style="color: #5a4946;">
+
+
+                        <li class="sidebar-itemm">
+                            <a href="platos.html" class="sidebar-linkk"> -Platos-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+
+                        <li class="sidebar-itemm">
+                            <a href="porras.html" class="sidebar-linkk"> -Porras-
+                            </a>
+                        </li>
+
+                        <hr style="color: #876e69;">
+
+
+                        <li class="sidebar-itemm">
+                            <a href="varios.html" class="sidebar-linkk"> -Varios-
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+    
+                <hr style="color: #876e69;">
+    
+                
+    
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#descarga"
+                        aria-expanded="false" aria-controls="coleccion4">
+                        <i class="fa-solid fa-share-nodes pe-2"></i>
+                        Descarga PDF
+                    </a>
+                    <ul id="descarga" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-itemm">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#descarga-links" aria-expanded="false" aria-controls="coleccion4-links">
+                                Links
+                            </a>
+                            <ul id="descarga-links" class="sidebar-dropdown list-unstyled collapse">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-linkk"> Link1
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-linkk"> Link2
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+    
+                    </ul>
+                </li>
+
+                <hr style="color: #876e69;">
+
+    
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages1"
+                        aria-expanded="false" aria-controls="pages1">
+                        <i class="fa-regular fa-file-lines pe-2"></i>
+                        Más información
+                    </a>
+                    <ul id="pages1" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-itemm">
+                            <a href="#" class="sidebar-linkk"> Consultas
+                            </a>
+                        </li>
+                        <li class="sidebar-itemm">
+                            <a href="#" class="sidebar-linkk"> Alianzas
+                            </a>
+                        </li>
+                        <li class="sidebar-itemm">
+                            <a href="#" class="sidebar-linkk"> Creditos
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+    
+                
+
+                <hr style="color: #876e69;">
+
+    
+            </div>
+        </div>
+    
+    
+
+        <nav class="navbar">
+            <i class="fa-solid fa-bars" id="sidebar-close"></i>
+            <h4>Catálogo Web</h4>
+        </nav>
+
+
+        <main class="main">
+            <div class="indxx">
+            <div class="sub" style="color: #876e69;"><h4><strong>COLECCIÓN LÍTICA LLOSA</strong></h4></div>
+            <h1> <strong><span>CALAVERAS</span></strong></h1>
+             
+            <h2 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro animi vel optio voluptatem,
+                 error aliquid soluta repellat fugit modi, nisi est rerum natus minima facere laudantium doloribus
+                  vero nobis impedit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                  Incidunt tempore ex nam molestias impedit mollitia numquam modi corporis magnam necessitatibus. 
+                  </h2>
+                  <hr id="hr2">
+            </div>
+       
+            
+                        <div class="galeria-container">
+                            <div class="pieza" data-name="p-1">
+                                <img src="./data/calaveras/portada/LCV001-1.jpg">
+                                <h3>LCV001</h3>
+                                
+                            </div>
+
+                            <div class="pieza" data-name="p-2">
+                                <img src="./data/calaveras/portada/LCV002-1.jpg">
+                                <h3 >LCV002</h3>
+                                
+                            </div>
+
+                            <div class="pieza" data-name="p-3">
+                                <img src="./data/calaveras/portada/LCV003-1.jpg">
+                                <h3 >LCV003</h3>
+                                
+                            </div>
+
+                            <div class="pieza" data-name="p-4">
+                                <img src="./data/calaveras/portada/LCV004-1.jpg">
+                                <h3 >LCV004</h3>
+                                
+                            </div>
+
+                            <div class="pieza" data-name="p-5">
+                                <img src="./data/calaveras/portada/LCV005-1.jpg">
+                                <h3 >LCV005</h3>
+                                
+                            </div>
+
+                            <div class="pieza" data-name="p-6">
+                                <img src="./data/calaveras/portada/LCV006-1.jpg">
+                                <h3 >LCV006</h3>
+                                
+                            </div>
+
+                            
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+            </main>
+
+
+          </div>
+
+    </div>
+ </div>
+
+
+
+ 
+    <div class="galeria-preview">
+      
+        <div class="preview" data-target="p-1">
+            <i class="fas fa-times"></i>
+            <header><h3> CALAVERAS LCV001-LCV026</h3></header>
+
+            <div class="pre">
+                <section id="magnific"> 
+            
+                    <div class="xzoom-container" id="xcontainer">
+                        
+                        <img class="xzoom1" id="xzoom-magnific1" width="400" src="./data/calaveras/p1/LCV001-1.jpg" xoriginal="./data/calaveras/p1/LCV001-1.jpg" />
+                        
+                        <div class="prepre">
+                        
+                                   <div class="xzoom-thumbs">
+                            <div class="thumbb">
+                            <a href="./data/calaveras/p1/LCV001-1.jpg"><img class="xzoom-gallery1" width="100" src="./data/calaveras/p1/LCV001-1.jpg"
+                                    xpreview="./data/calaveras/p1/LCV001-1.jpg" title="DESCRIPCIÓN AQUI"></a><h6>LCV001-1</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p1/LCV001-2.jpg"><img class="xzoom-gallery1" width="100" src="./data/calaveras/p1/LCV001-2.jpg"
+                                    title="The description goes here"></a><h6>LCV001-2</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p1/LCV001-3.jpg"><img class="xzoom-gallery1" width="100" src="./data/calaveras/p1/LCV001-3.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-3</h6></div>
+                            <div class="thumbb">        
+                            <a href="./data/calaveras/p1/LCV001-4.jpg"><img class="xzoom-gallery1" width="100" src="./data/calaveras/p1/LCV001-4.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-4</h6></div>
+                        
+                                      </div>
+
+                                              <div class="tabla">
+                                                <h3 class="tabla-title">Medidas (cm/gr)</h3>
+                                                  <div class="cuadro">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Alto</th>
+                                                                <th>Largo</th>
+                                                                <th>Ancho</th>
+                                                                <th>Peso</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>12,5</td>
+                                                                <td>19</td>
+                                                                <td>28</td>
+                                                                <td>6,600</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                  </div>
+                                              </div>
+                                      
+
+                        </div>
+                    </div>
+
+                   
+                </section>
+                   
+                
+            </div>
+
+
+            <div class="notas" >
+             <hr style="width:100%">
+             <h3><strong>Notas de investigación</strong></h3>
+             <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                        reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                        blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                            reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                            blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                                reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                                blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                                <p style="color: brown;">*Pieza del 4to grupo registrada en el Ministerio de Cultura del Perú. Expediente N*2023-0022895.</p>
+
+                                    
+            
+                                    <div class="sig">
+                                        <button><a href="" target="_blank" download="" style="color: #272727;">Descargar ficha</a></button> 
+                                           </div>
+            </div>   
+         
+        </div>
+
+        <div class="preview" data-target="p-2">
+            <i class="fas fa-times"></i>
+            <header><h3> CALAVERAS LCV001-LCV026</h3></header>
+
+            <div class="pre">
+                <section id="magnific"> 
+            
+                    <div class="xzoom-container" id="xcontainer">
+                        
+                        <img class="xzoom2" id="xzoom-magnific1" width="400" src="./data/calaveras/p2/LCV002-1.jpg" xoriginal="./data/calaveras/p2/LCV002-1.jpg" />
+                        
+                        <div class="prepre">
+                        
+                                   <div class="xzoom-thumbs">
+                            <div class="thumbb">
+                            <a href="./data/calaveras/p2/LCV002-1.jpg"><img class="xzoom-gallery2" width="100" src="./data/calaveras/p2/LCV002-1.jpg"
+                                    xpreview="./data/calaveras/p2/LCV002-1.jpg" title="DESCRIPCIÓN AQUI"></a><h6>LCV001-1</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p2/LCV002-2.jpg"><img class="xzoom-gallery2" width="100" src="./data/calaveras/p2/LCV002-2.jpg"
+                                    title="The description goes here"></a><h6>LCV001-2</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p2/LCV002-3.jpg"><img class="xzoom-gallery2" width="100" src="./data/calaveras/p2/LCV002-3.jpg"
+                                    title="LCV001-3"></a> <h6>LCV001-3</h6></div>
+                            <div class="thumbb">        
+                            <a href="./data/calaveras/p2/LCV002-4.jpg"><img class="xzoom-gallery2" width="100" src="./data/calaveras/p2/LCV002-4.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-4</h6></div>
+                            <div class="thumbb">        
+                            <a href="./data/calaveras/p2/LCV002-5.jpg"><img class="xzoom-gallery2" width="100" src="./data/calaveras/p2/LCV002-5.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-4</h6></div>
+                        
+                                      </div>
+
+                                              <div class="tabla">
+                                                <h3 class="tabla-title">Medidas (cm/gr)</h3>
+                                                  <div class="cuadro">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Alto</th>
+                                                                <th>Largo</th>
+                                                                <th>Ancho</th>
+                                                                <th>Peso</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>12,5</td>
+                                                                <td>19</td>
+                                                                <td>28</td>
+                                                                <td>6,600</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                  </div>
+                                              </div>
+                                      
+
+                        </div>
+                    </div>
+
+                   
+                </section>
+                   
+                
+            </div>
+
+
+            <div class="notas" >
+             <hr style="width:100%">
+             <h3><strong>Notas de investigación</strong></h3>
+             <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                        reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                        blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                            reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                            blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                                reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                                blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                                <p style="color: brown;">*Pieza del 4to grupo registrada en el Ministerio de Cultura del Perú. Expediente N*2023-0022895.</p>
+
+                                    
+            
+                                    <div class="sig">
+                                        <button><a href="" target="_blank" download="" style="color: #272727;">Descargar ficha</a></button> 
+                                           </div>
+            </div>   
+               </div>
+
+
+        <div class="preview" data-target="p-3">
+            <i class="fas fa-times"></i>
+            <header><h3> CALAVERAS LCV001-LCV026</h3></header>
+
+            <div class="pre">
+                <section id="magnific"> 
+            
+                    <div class="xzoom-container" id="xcontainer">
+                        
+                        <img class="xzoom3" id="xzoom-magnific1" width="400" src="./data/calaveras/p3/LCV003-1.jpg" xoriginal="./data/calaveras/p3/LCV003-1.jpg" />
+                        
+                        <div class="prepre">
+                        
+                                   <div class="xzoom-thumbs">
+                            <div class="thumbb">
+                            <a href="./data/calaveras/p3/LCV003-1.jpg"><img class="xzoom-gallery3" width="100" src="./data/calaveras/p3/LCV003-1.jpg"
+                                    xpreview="./data/calaveras/p3/LCV003-1.jpg" title="DESCRIPCIÓN AQUI"></a><h6>LCV001-1</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p3/LCV003-2.jpg"><img class="xzoom-gallery3" width="100" src="./data/calaveras/p3/LCV003-2.jpg"
+                                    title="The description goes here"></a><h6>LCV001-2</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p3/LCV003-3.jpg"><img class="xzoom-gallery3" width="100" src="./data/calaveras/p3/LCV003-3.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-3</h6></div>
+                            <div class="thumbb">        
+                            <a href="./data/calaveras/p3/LCV003-4.jpg"><img class="xzoom-gallery3" width="100" src="./data/calaveras/p3/LCV003-4.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-4</h6></div>
+                        
+                                      </div>
+
+                                              <div class="tabla">
+                                                <h3 class="tabla-title">Medidas (cm/gr)</h3>
+                                                  <div class="cuadro">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Alto</th>
+                                                                <th>Largo</th>
+                                                                <th>Ancho</th>
+                                                                <th>Peso</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>20</td>
+                                                                <td>16</td>
+                                                                <td>25,7</td>
+                                                                <td>9,400</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                  </div>
+                                              </div>
+                                      
+
+                        </div>
+                    </div>
+
+                   
+                </section>
+                   
+                
+            </div>
+
+
+            <div class="notas" >
+             <hr style="width:100%">
+             <h3><strong>Notas de investigación</strong></h3>
+             <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                        reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                        blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                            reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                            blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                                reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                                blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                                <p style="color: brown;">*Pieza del 4to grupo registrada en el Ministerio de Cultura del Perú. Expediente N*2023-0022895.</p>
+
+                                    
+            
+                                    <div class="sig">
+                                        <button><a href="" target="_blank" download="" style="color: #272727;">Descargar ficha</a></button> 
+                                           </div>
+            </div>                    
+
+        </div>
+
+        
+        <div class="preview" data-target="p-4">
+            <i class="fas fa-times"></i>
+            <header><h3> CALAVERAS LCV010-LCV026</h3></header>
+
+            <div class="pre">
+                <section id="magnific"> 
+            
+                    <div class="xzoom-container" id="xcontainer">
+                        
+                        <img class="xzoom4" id="xzoom-magnific1" width="400" src="./data/calaveras/p4/LCV004-1.jpg" xoriginal="./data/calaveras/p4/LCV004-1.jpg" />
+                        
+                        <div class="prepre">
+                        
+                                   <div class="xzoom-thumbs">
+                            <div class="thumbb">
+                            <a href="./data/calaveras/p4/LCV004-1.jpg"><img class="xzoom-gallery4" width="100" src="./data/calaveras/p4/LCV004-1.jpg"
+                                    xpreview="./data/calaveras/p4/LCV004-1.jpg" title="DESCRIPCIÓN AQUI"></a><h6>LCV001-1</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p4/LCV004-2.jpg"><img class="xzoom-gallery4" width="100" src="./data/calaveras/p4/LCV004-2.jpg"
+                                    title="The description goes here"></a><h6>LCV001-2</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p4/LCV004-3.jpg"><img class="xzoom-gallery4" width="100" src="./data/calaveras/p4/LCV004-3.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-3</h6></div>
+                            <div class="thumbb">        
+                            <a href="./data/calaveras/p4/LCV004-4.jpg"><img class="xzoom-gallery4" width="100" src="./data/calaveras/p4/LCV004-4.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-4</h6></div>
+                        
+                                      </div>
+
+                                              <div class="tabla">
+                                                <h3 class="tabla-title">Medidas (cm/gr)</h3>
+                                                  <div class="cuadro">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Alto</th>
+                                                                <th>Largo</th>
+                                                                <th>Ancho</th>
+                                                                <th>Peso</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>21</td>
+                                                                <td>17</td>
+                                                                <td>25,4</td>
+                                                                <td>10,900</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                  </div>
+                                              </div>
+                                      
+
+                        </div>
+                    </div>
+
+                   
+                </section>
+                   
+                
+            </div>
+
+
+            <div class="notas" >
+             <hr style="width:100%">
+             <h3><strong>Notas de investigación</strong></h3>
+             <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                        reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                        blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                            reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                            blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                                reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                                blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                                <p style="color: brown;">*Pieza del 4to grupo registrada en el Ministerio de Cultura del Perú. Expediente N*2023-0022895.</p>
+
+                                    
+            
+                                    <div class="sig">
+                                        <button><a href="" target="_blank" download="" style="color: #272727;">Descargar ficha</a></button> 
+                                           </div>
+            </div>             
+
+        </div>
+
+        
+        <div class="preview" data-target="p-5">
+            <i class="fas fa-times"></i>
+            <header><h3> CALAVERAS LCV010-LCV026</h3></header>
+
+            <div class="pre">
+                <section id="magnific"> 
+            
+                    <div class="xzoom-container" id="xcontainer">
+                        
+                        <img class="xzoom5" id="xzoom-magnific1" width="400" src="./data/calaveras/p5/LCV005-1.jpg" xoriginal="./data/calaveras/p5/LCV005-1.jpg" />
+                        
+                        <div class="prepre">
+                        
+                                   <div class="xzoom-thumbs">
+                            <div class="thumbb">
+                            <a href="./data/calaveras/p5/LCV005-1.jpg"><img class="xzoom-gallery5" width="100" src="./data/calaveras/p5/LCV005-1.jpg"
+                                    xpreview="./data/calaveras/p5/LCV005-1.jpg" title="DESCRIPCIÓN AQUI"></a><h6>LCV001-1</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p5/LCV005-2.jpg"><img class="xzoom-gallery5" width="100" src="./data/calaveras/p5/LCV005-2.jpg"
+                                    title="The description goes here"></a><h6>LCV001-2</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p5/LCV005-3.jpg"><img class="xzoom-gallery5" width="100" src="./data/calaveras/p5/LCV005-3.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-3</h6></div>
+                            <div class="thumbb">        
+                            <a href="data/calaveras/p5/LCV005-4.jpg"><img class="xzoom-gallery5" width="100" src="data/calaveras/p5/LCV005-4.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-4</h6></div>
+                            <div class="thumbb">        
+                            <a href="data/calaveras/p5/LCV005-5.jpg"><img class="xzoom-gallery5" width="100" src="data/calaveras/p5/LCV005-5.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-5</h6></div>
+                        
+                                      </div>
+
+                                              <div class="tabla">
+                                                <h3 class="tabla-title">Medidas (cm/gr)</h3>
+                                                  <div class="cuadro">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Alto</th>
+                                                                <th>Largo</th>
+                                                                <th>Ancho</th>
+                                                                <th>Peso</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>21,3</td>
+                                                                <td>16,7</td>
+                                                                <td>23,5</td>
+                                                                <td>10,000</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                  </div>
+                                              </div>
+                                      
+
+                        </div>
+                    </div>
+
+                   
+                </section>
+                   
+                
+            </div>
+
+
+            <div class="notas" >
+             <hr style="width:100%">
+             <h3><strong>Notas de investigación</strong></h3>
+             <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                        reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                        blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                            reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                            blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                                reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                                blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                                <p style="color: brown;">*Pieza del 4to grupo registrada en el Ministerio de Cultura del Perú. Expediente N*2023-0022895.</p>
+
+                                    
+            
+                                    <div class="sig">
+                                        <button><a href="" target="_blank" download="" style="color: #272727;">Descargar ficha</a></button> 
+                                           </div>
+            </div>                 
+
+        </div>
+
+        
+        <div class="preview" data-target="p-6">
+            <i class="fas fa-times"></i>
+            <header><h3> CALAVERAS LCV010-LCV026</h3></header>
+
+            <div class="pre">
+                <section id="magnific"> 
+            
+                    <div class="xzoom-container" id="xcontainer">
+                        
+                        <img class="xzoom6" id="xzoom-magnific1" width="400" src="./data/calaveras/p6/LCV006-1.jpg" xoriginal="./data/calaveras/p6/LCV006-1.jpg" />
+                        
+                        <div class="prepre">
+                        
+                                   <div class="xzoom-thumbs">
+                            <div class="thumbb">
+                            <a href="./data/calaveras/p6/LCV006-1.jpg"><img class="xzoom-gallery6" width="100" src="./data/calaveras/p6/LCV006-1.jpg"
+                                    xpreview="./data/calaveras/p6/LCV006-1.jpg" title="DESCRIPCIÓN AQUI"></a><h6>LCV001-1</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p6/LCV006-2.jpg"><img class="xzoom-gallery6" width="100" src="./data/calaveras/p6/LCV006-2.jpg"
+                                    title="The description goes here"></a><h6>LCV001-2</h6></div>
+                            <div class="thumbb">
+                                    <a href="./data/calaveras/p6/LCV006-3.jpg"><img class="xzoom-gallery6" width="100" src="./data/calaveras/p6/LCV006-3.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-3</h6></div>
+                            <div class="thumbb">        
+                            <a href="./data/calaveras/p6/LCV006-4.jpg"><img class="xzoom-gallery6" width="100" src="./data/calaveras/p6/LCV006-4.jpg"
+                                    title="The description goes here"></a> <h6>LCV001-4</h6></div>
+                        
+                                      </div>
+
+                                              <div class="tabla">
+                                                <h3 class="tabla-title">Medidas (cm/gr)</h3>
+                                                  <div class="cuadro">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Alto</th>
+                                                                <th>Largo</th>
+                                                                <th>Ancho</th>
+                                                                <th>Peso</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>24,5</td>
+                                                                <td>15,5</td>
+                                                                <td>23,8</td>
+                                                                <td>10,400</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                  </div>
+                                              </div>
+                                      
+
+                        </div>
+                    </div>
+
+                   
+                </section>
+                   
+                
+            </div>
+
+
+            <div class="notas" >
+             <hr style="width:100%">
+             <h3><strong>Notas de investigación</strong></h3>
+             <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                        reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                        blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                            reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                            blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere nihil ex
+                                reprehenderit repellat veniam deserunt eveniet inventore obcaecati, dolorem sapiente, pariatur numquam
+                                blanditiis illum! Excepturi, a deserunt! Quam, quod!</p>
+                                <p style="color: brown;">*Pieza del 4to grupo registrada en el Ministerio de Cultura del Perú. Expediente N*2023-0022895.</p>
+                                    
+            
+                                    <div class="sig">
+                                        <button><a href="" target="_blank" download="" style="color: #272727;">Descargar ficha</a></button> 
+                                           </div>
+            </div>                   
+
+        </div>
+
+        
+            
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    
+    
+   
+    
+    
+
+<script src="setup.js"></script>
+
+</body>
+</html>
