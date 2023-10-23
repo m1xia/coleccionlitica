@@ -9,6 +9,84 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <link rel="stylesheet" href="main.css">
+
+    <style>
+
+        .separata img{
+            height: 200px;
+        }
+        .separata h1{
+            margin: 10px;
+            margin-top: 0;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .separata p{
+            font-size: 18px;
+            margin: 20px;
+            visibility: hidden;
+            opacity: 0;
+            color: white;
+        }
+
+        .separatas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+            gap: 1.4rem;
+            justify-content: center;
+            align-items: center;
+            margin-left: 90px;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        
+        .separata{
+            height: 200px;
+            width: 200PX;
+            position: relative;
+            margin: 0;
+            margin-bottom: 4rem;
+            box-shadow: 5px 5px 20px black;
+            overflow: hidden;
+                }
+
+        .separata:hover{
+            cursor: pointer;
+        }        
+
+        .intro{
+            position: absolute;
+            height: 40px;
+            width: 200px;
+            padding: 6px;
+            
+            bottom: 0;
+            
+            background: rgb(27,27, 27, .5);
+            color: white;
+            transition: .5s;
+             
+        }      
+        
+        .separata:hover .intro{
+            height: 200px;
+            background: black;
+        }
+
+
+        .separata:hover p{
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .separata:hover img{
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+
+    </style>
 </head>
 <body>
 
@@ -230,25 +308,103 @@
                 <div class="indx">
                 
                     <div class="title">
-                        
-                       
-                        
-                        <h1><strong><hr>COLECCIÓN <br> LÍTICA <hr><h1 id="name">CARLOS LLOSA <br> LARRABURE</h1><hr></strong> </h1>
-                         <div class="im">
-                             
-                            <img src="./data/MA2.jpg" alt="">
-                            <img src="./data/MA4.jpg" alt=""> 
-                            
-                                                          
-                        </div>
-                      
-                        
-                        
-                    </div><hr>
-                  
-                     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quos repellat deserunt eum vitae maxime placeat aliquid molestiae excepturi cum voluptatum iure, harum suscipit laboriosam quas doloremque nam vero dolorum!</h2>
+                        <h1><strong>COLECCIÓN <br> LÍTICA </strong><h2 >-CARLOS LLOSA LARRABURE-</h2> </h1>
+                    </div>
+                </div><hr>
 
+                <h2 id="name">Contenido</h2>
+
+                <div class="separatas">
                     
+                            <a href="armas.html">
+                                <div class="separata">
+                                    <img src="./data/separata/01.jpg" alt="ARMAS">
+                                    <div class="intro">
+                                       <h1>ARMAS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="calaveras.html">
+                            <div class="separata">
+                                <img src="./data/separata/02.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>CALAVERAS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                           <a href="conopas.html"> <div class="separata">
+                                <img src="./data/separata/03.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>CONOPAS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="estelas.html">
+                            <div class="separata">
+                                <img src="./data/separata/04.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>ESTELAS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="illas.html"><div class="separata">
+                                <img src="./data/separata/05.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>ILLAS-MULLUS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="maquetas.html"><div class="separata">
+                                <img src="./data/separata/06.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>MAQUETAS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="mascaras.html"><div class="separata">
+                                <img src="./data/separata/07.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>MASCARAS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="mazos.html"><div class="separata">
+                                <img src="./data/separata/08.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>MAZOS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="morteros.html"><div class="separata">
+                                <img src="./data/separata/09.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>MORTEROS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="platos.html"><div class="separata">
+                                <img src="./data/separata/10.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>PLATOS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="porras.html"><div class="separata">
+                                <img src="./data/separata/11.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>PORRAS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            <a href="varios.html"><div class="separata">
+                                <img src="./data/separata/12.jpg" alt="ARMAS">
+                                <div class="intro">
+                                    <h1>VARIOS</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                            </div></a>
+                            
                 </div>
       
             </main>
